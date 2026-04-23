@@ -20,7 +20,7 @@ on:
 
 jobs:
   board:
-    if: inputs.port == 'espressif' 
+    if: inputs.port == 'espressif'
     runs-on: ubuntu-24.04
     env:
       CP_VERSION: ${{ inputs.cp-version }}
