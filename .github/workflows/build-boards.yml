@@ -20,13 +20,16 @@ on:
 
 jobs:
   board:
+    # ХАК: Собираем только если порт — espressif (в котором лежит твой S3)
+    if: inputs.port == 'espressif' 
     runs-on: ubuntu-24.04
     env:
       CP_VERSION: ${{ inputs.cp-version }}
     strategy:
       fail-fast: false
       matrix:
-        board: ${{ fromJSON(inputs.boards) }}
+        # ХАК: Из всего списка плат порта выбираем только твой DevKit
+        board: [espressif_esp32s3_devkitc_1]
     steps:
     - name: Set up repository
       uses: actions/checkout@v6
