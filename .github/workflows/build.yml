@@ -5,7 +5,7 @@
 name: Build CI
 
 on:
-  workflow_dispatch: {}  # Та самая кнопка ручного запуска во вкладке Actions
+  workflow_dispatch: {}  
   push:
     branches:
       - Zest
